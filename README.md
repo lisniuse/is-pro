@@ -1,2 +1,3 @@
-# checkjs
-checkjs
+# is-pro
+
+is-pro
