@@ -2,7 +2,7 @@
 // prevent NaN, Number same type check
 const isSameType = function(is) {
   return function (value, other) {
-    var tag = toString.call(value);
+    let tag = toString.call(value);
     if (tag !== toString.call(other)) {
       return false;
     }

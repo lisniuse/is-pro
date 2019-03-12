@@ -1,9 +1,17 @@
 //import presence
 import {
-  isEmpty, 
+  isEmpty,
+  isExisty,
+  isTruthy,
+  isFalsy,
+  isSpace
 } from './index';
 
 // export presence
 export default {
-  empty: isEmpty
+  empty: isEmpty,
+  existy: isExisty,
+  truthy: isTruthy,
+  falsy: isFalsy,
+  space: isSpace
 }

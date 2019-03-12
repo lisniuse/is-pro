@@ -1,3 +1,3 @@
 const is = require('../dist/umd/ispro');
 
-console.log(is.typeof === is.typeof);
+console.log(is.equal(true, true));
