@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('presenceFalsy', () => {
+describe('presence/falsy', () => {
 
   test('should return false if given value is truthy', () => {
     expect(is.falsy('test')).toBe(false);

@@ -2,7 +2,7 @@ import not from '../../core/not';
 
 // is a given date weekday?
 const isWeekday = function(value) {
-  return not(this.weekend, this)(value);
+  return this.not.weekend(value, this);
 }
 
 export default isWeekday;

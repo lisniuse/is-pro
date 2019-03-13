@@ -10,6 +10,6 @@ describe('type/array', () => {
   test('should return false if passed parameter type is not array', () => {
     let notArray = 'test';
     expect(is.array(notArray)).toBe(false);
-  }); 
+  });
 
 });

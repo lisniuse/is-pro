@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('typeObject', () => {
+describe('type/object', () => {
 
   test('should return true if passed parameter type is object', () => {
     expect(is.object({})).toBe(true);

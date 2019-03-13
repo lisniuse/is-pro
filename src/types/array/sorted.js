@@ -3,7 +3,7 @@ const isSorted = function (array, sign) {
   if (this.not.array(array)) {
     return false;
   }
-  let predicate = comparator[sign] || comparator['>='];
+  let predicate = this._comparator[sign] || this._comparator['>='];
   for (let i = 1; i < array.length; i++) {
     if (!predicate(array[i], array[i - 1])) {
       return false;

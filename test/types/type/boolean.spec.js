@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('typeBoolean', () => {
+describe('type/boolean', () => {
 
   test('should return true if passed parameter type is boolean', () => {
     let bool = true;

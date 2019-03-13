@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('typeJson', () => {
+describe('type/json', () => {
 
   test('should return true if passed parameter type is a json object', () => {
     expect(is.json({})).toBe(true);

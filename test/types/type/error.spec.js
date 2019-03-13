@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('typeError', () => {
+describe('type/error', () => {
 
   test('should return true if passed parameter type is error', () => {
     let error = new Error();

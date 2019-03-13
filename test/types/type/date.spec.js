@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('typeDate', () => {
+describe('type/date', () => {
 
   test('should return true if passed parameter type is date', () => {
     let date = new Date();

@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('presenceExisty', () => {
+describe('presence/existy', () => {
 
   test('should return false if given value is null', () => {
     expect(is.existy(null)).toBe(false);

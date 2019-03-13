@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('typeArguments', () => {
+describe('type/arguments', () => {
 
   test('should return true if passed parameter type is arguments', () => {
     let getArguments = () => {

@@ -22,7 +22,7 @@ const regexes = {
 
 const regexpFn = function (regexp) {
   return function (value) {
-    return this.existy(value) && regexes[regexp].test(value);
+    return isExisty(value) && regexes[regexp].test(value);
   }
 }
 
@@ -31,6 +31,7 @@ export const isEmail = regexpFn('email');
 export const isCreditCard = regexpFn('creditCard');
 export const isAlphaNumeric = regexpFn('alphaNumeric');
 export const isTimeString = regexpFn('timeString');
+export const isDateString = regexpFn('dateString');
 export const isUsZipCode = regexpFn('usZipCode');
 export const isCaPostalCode = regexpFn('caPostalCode');
 export const isUkPostCode = regexpFn('ukPostCode');

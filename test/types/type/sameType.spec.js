@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('typeSameType', () => {
+describe('type/sameType', () => {
 
   test('should return true if passed parameter types are same', () => {
     expect(is.sameType(1, 2)).toBe(true);

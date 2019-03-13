@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('type/json', () => {
+describe('type/nan', () => {
 
   test('should return true if passed parameter type is NaN', () => {
     expect(is.nan(NaN)).toBe(true);

@@ -1,9 +1,9 @@
 import { hasOwnProperty } from './properties';
 const ignoreOptions = ['typeof', 'sameType'];
+
 // API
 // Set 'not', 'all' and 'any' interfaces to methods based on their api property
 /* -------------------------------------------------------------------------- */
-
 const mixinTypeof = function (is) {
   let options = is;
   const typeOf = function(value) {

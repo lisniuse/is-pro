@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('typeChar', () => {
+describe('type/char', () => {
 
   test('should return true if passed parameter type is char', () => {
     expect(is.char('t')).toBe(true);

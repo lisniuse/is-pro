@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('typeNull', () => {
+describe('type/null', () => {
 
   test('should return true if passed parameter type is null', () => {
     expect(is.null(null)).toBe(true);

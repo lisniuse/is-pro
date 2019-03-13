@@ -1,7 +1,9 @@
 import types from './types/types';
 import mixinTypeof from './core/mixinTypeof';
 import setInterfaces from './core/setInterfaces';
-import { 
+import compareVersion from './helper/compareVersion';
+import comparator from './helper/comparator';
+import {
   toString,
   slice,
   hasOwnProperty,
@@ -41,11 +43,18 @@ let coreProperties = {
   _vendor: vendor
 }
 
+// helpers
+let helpers = {
+  _compareVersion: compareVersion,
+  _comparator: comparator
+}
+
 // define 'is' object and current version
 let is = Object.assign(
   coreProperties,
   types,
-  interfaces, 
+  interfaces,
+  helpers,
   {
     VERSION: '0.1.0'
   }

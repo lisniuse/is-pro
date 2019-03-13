@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('typeRegexp', () => {
+describe('type/regexp', () => {
 
   test('should return true if passed parameter type is regexp', () => {
     let regexp = new RegExp();

@@ -1,6 +1,5 @@
-import { slice } from './properties';
+import { slice, toString } from '../core/properties';
 import isArray from '../types/type/array';
-import { toString } from './properties';
 let is = {
   _toString: toString,
   array: isArray

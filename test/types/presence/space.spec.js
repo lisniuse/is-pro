@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('presenceSpace', () => {
+describe('presence/space', () => {
 
   test('should return false if given value is not string', () => {
     expect(is.space(1)).toBe(false);

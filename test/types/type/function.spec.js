@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('typeFunction', () => {
+describe('type/function', () => {
 
   test('should return true if passed parameter type is function', () => {
     expect(is.function(is.function)).toBe(true);

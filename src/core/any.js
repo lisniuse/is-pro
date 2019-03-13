@@ -1,4 +1,4 @@
-import getParams from './getParams';
+import getParams from '../helper/getParams';
 
 // helper function which call predicate function per parameter and return true if any pass
 const any = function (func, that) {

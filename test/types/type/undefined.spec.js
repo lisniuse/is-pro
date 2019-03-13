@@ -1,6 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
 
-describe('typeUndefined', () => {
+describe('type/undefined', () => {
 
   test('should return true if passed parameter type is undefined', () => {
     expect(is.undefined(undefined)).toBe(true);
