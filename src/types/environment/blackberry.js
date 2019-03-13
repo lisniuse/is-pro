@@ -1,6 +1,6 @@
 // is current device blackberry?
 const isBlackberry = function () {
-  return /blackberry/.test(userAgent) || /bb10/.test(userAgent);
+  return /blackberry/.test(this._userAgent) || /bb10/.test(this._userAgent);
 };
 
 export default isBlackberry;

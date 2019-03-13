@@ -1,8 +1,6 @@
-import isString from '../type/string';
-
 // is a given string or sentence capitalized?
 const isCapitalized = function (string) {
-  if (!isString(string)) {
+  if (!this.string(string)) {
     return false;
   }
   let words = string.split(' ');
@@ -19,5 +17,3 @@ const isCapitalized = function (string) {
 };
 
 export default isCapitalized;
-
-

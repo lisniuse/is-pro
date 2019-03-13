@@ -22,7 +22,7 @@ const regexes = {
 
 const regexpFn = function (regexp) {
   return function (value) {
-    return isExisty(value) && regexes[regexp].test(value);
+    return this.existy(value) && regexes[regexp].test(value);
   }
 }
 
@@ -42,6 +42,7 @@ export const isHexadecimal = regexpFn('hexadecimal');
 export const isHexColor = regexpFn('hexColor');
 export const isIpv4 = regexpFn('ipv4');
 export const isIpv6 = regexpFn('ipv6');
+
 // simplify IP checks by calling the regex helpers for IPv4 and IPv6
 export const isIp = function (value) {
   return isIpv4(value) || isIpv6(value);

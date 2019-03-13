@@ -6,6 +6,6 @@ import {
 
 // export array
 export default {
-  array: isInArray,
+  inArray: isInArray,
   sorted: isSorted
 }

@@ -1,6 +1,6 @@
 // is current device tablet?
 const isTablet = function () {
-  return is.ipad() || is.androidTablet() || is.windowsTablet();
+  return this.ipad() || this.androidTablet() || this.windowsTablet();
 };
 
 export default isTablet;

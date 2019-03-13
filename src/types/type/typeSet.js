@@ -34,5 +34,6 @@ export default {
   regexp: isRegexp,
   string: isString,
   char: isChar,
-  undefined: isUndefined
+  undefined: isUndefined,
+  sameType: isSameType
 }

@@ -1,6 +1,6 @@
 // is current device windows tablet?
 const isWindowsTablet = function () {
-  return isWindows() && is.not.windowsPhone() && /touch/.test(userAgent);
+  return isWindows() && this.not.windowsPhone() && /touch/.test(this._userAgent);
 };
 
 export default isWindowsTablet;

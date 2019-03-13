@@ -1,7 +1,20 @@
 import types from './types/types';
-import isSameType from './types/type/sameType';
 import mixinTypeof from './core/mixinTypeof';
 import setInterfaces from './core/setInterfaces';
+import { 
+  toString,
+  slice,
+  hasOwnProperty,
+  freeGlobal,
+  freeSelf,
+  root,
+  document,
+  previousIs,
+  navigator,
+  platform,
+  userAgent,
+  vendor
+} from './core/properties';
 
 // define interfaces
 let interfaces = {
@@ -10,15 +23,35 @@ let interfaces = {
   any: {}
 };
 
+//common prototype methods
+let coreProperties = {
+  //some methods to call later on
+  _toString: toString,
+  _slice: slice,
+  _hasOwnProperty: hasOwnProperty,
+  //environment
+  _freeGlobal: freeGlobal,
+  _freeSelf: freeSelf,
+  _root: root,
+  _document: document,
+  _previousIs: previousIs,
+  _navigator: navigator,
+  _platform: platform,
+  _userAgent: userAgent,
+  _vendor: vendor
+}
+
 // define 'is' object and current version
-let is = Object.assign(types, interfaces);
-is.VERSION = '0.1.0';
+let is = Object.assign(
+  coreProperties,
+  types,
+  interfaces, 
+  {
+    VERSION: '0.1.0'
+  }
+);
+
 setInterfaces(is);
 mixinTypeof(is);
-// are given values same type?
-// prevent NaN, Number same type check
-is.sameType = isSameType(is);
-// sameType method does not support 'all' and 'any' interfaces
-is.sameType.api = ['not'];
 
 export default is;

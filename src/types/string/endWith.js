@@ -1,8 +1,6 @@
-import isString from '../type/string';
-
 // is string end with a given target parameter?
 const isEndWith = function (string, target) {
-  if (!isString(string)) {
+  if (!this.string(string)) {
     return false;
   }
   target += '';

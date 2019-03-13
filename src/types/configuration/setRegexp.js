@@ -1,7 +1,7 @@
 // set optional regexes to methods
 const isSetRegexp = function (regexp, name) {
-  for (var r in regexes) {
-    if (hasOwnProperty.call(regexes, r) && (name === r)) {
+  for (let r in regexes) {
+    if (this._hasOwnProperty.call(regexes, r) && (name === r)) {
       regexes[r] = regexp;
     }
   }

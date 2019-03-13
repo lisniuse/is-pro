@@ -1,6 +1,6 @@
 // is current device desktop?
 const isDesktop = function () {
-  return is.not.mobile() && is.not.tablet();
+  return this.not.mobile() && this.not.tablet();
 };
 
 export default isDesktop;

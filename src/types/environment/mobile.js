@@ -1,6 +1,6 @@
 // is current device mobile?
 const isMobile = function () {
-  return is.iphone() || is.ipod() || is.androidPhone() || is.blackberry() || is.windowsPhone();
+  return this.iphone() || this.ipod() || this.androidPhone() || this.blackberry() || this.windowsPhone();
 };
 
 export default isMobile;

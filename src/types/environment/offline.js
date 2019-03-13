@@ -1,4 +1,8 @@
+import not from '../../core/not';
+
 // is current state offline?
-const isOffline = not(is.online);
+const isOffline = function(value) {
+  return not(this.online, this)(value);
+}
 
 export default isOffline;

@@ -1,8 +1,6 @@
-import isString from '../type/string';
-
 // is a given string palindrome?
 const isPalindrome = function (string) {
-  if (!isString(string)) {
+  if (!this.string(string)) {
     return false;
   }
   string = string.replace(/[^a-zA-Z0-9]+/g, '').toLowerCase();
