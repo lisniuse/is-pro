@@ -19,4 +19,21 @@ describe('string/capitalized', () => {
     expect(is.capitalized('Test is good')).toBe(false);
   });
 
+  test('is.not.capitalized(\'nope not capitalized\') => true', () => {
+    expect(is.not.capitalized('nope not capitalized')).toBe(true);
+  });
+
+  test('is.all.capitalized(\'Yeap\', \'All\', \'Capitalized\') => true', () => {
+    expect(is.all.capitalized('Yeap', 'All', 'Capitalized')).toBe(true);
+  });
+  
+  test('is.any.capitalized(\'Yeap\', \'some\', \'Capitalized\') => true', () => {
+    expect(is.any.capitalized('Yeap', 'some', 'Capitalized')).toBe(true);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.capitalized([\'Nope\', \'not\']) => false', () => {
+    expect(is.all.capitalized(['Nope', 'not'])).toBe(false);
+  });
+  
 });

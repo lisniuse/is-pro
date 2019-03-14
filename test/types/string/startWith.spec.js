@@ -10,4 +10,8 @@ describe('string/startWith', () => {
     expect(is.startWith('test', 'st')).toBe(false);
   });
 
+  test('is.not.startWith(\'nope not that\', \'not\') => true', () => {
+    expect(is.not.startWith('nope not that', 'not')).toBe(true);
+  });       
+
 });

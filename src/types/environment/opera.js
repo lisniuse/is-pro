@@ -5,4 +5,7 @@ const isOpera = function (range) {
   return match !== null && this._compareVersion(match[1], range);
 };
 
+// opera method does not support 'all' and 'any' interfaces
+isOpera.api = ['not'];
+
 export default isOpera;

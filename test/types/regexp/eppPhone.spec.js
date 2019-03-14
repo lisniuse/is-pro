@@ -18,4 +18,21 @@ describe('regexp/eppPhone', () => {
     expect(is.eppPhone(undefined)).toBe(false);
   });
 
+  test('is.not.eppPhone(\'123\') => true', () => {
+    expect(is.not.eppPhone('123')).toBe(true);
+  });
+
+  test('is.all.eppPhone(\'+90.2322456789\', \'123\') => false', () => {
+    expect(is.all.eppPhone('+90.2322456789', '123')).toBe(false);
+  });
+  
+  test('is.any.eppPhone(\'+90.2322456789\', \'123\') => true', () => {
+    expect(is.any.eppPhone('+90.2322456789', '123')).toBe(true);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.eppPhone([\'+90.2322456789\', \'123\']) => false', () => {
+    expect(is.all.eppPhone(['+90.2322456789', '123'])).toBe(false);
+  });
+
 });

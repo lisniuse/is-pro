@@ -12,4 +12,9 @@ describe('time/day', () => {
     expect(is.day(new Date(time), 'monday')).toBe(false);
   });
 
+  test('is.not.day(mondayObj, \'tuesday\') => true', () => {
+    let mondayObj = new Date('01/26/2015');
+    expect(is.not.day(mondayObj, 'tuesday')).toBe(true);
+  });
+
 });

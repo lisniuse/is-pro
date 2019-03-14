@@ -5,4 +5,7 @@ const isIpad = function (range) {
   return match !== null && this._compareVersion(match[1], range);
 };
 
+// ipad method does not support 'all' and 'any' interfaces
+isIpad.api = ['not'];
+
 export default isIpad;

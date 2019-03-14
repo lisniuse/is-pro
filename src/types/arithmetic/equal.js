@@ -15,4 +15,6 @@ const isEqual = function (value, other) {
   return false;
 };
 
+isEqual.api = ['not'];
+
 export default isEqual;

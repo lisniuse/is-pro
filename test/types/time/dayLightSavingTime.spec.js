@@ -12,7 +12,12 @@ describe('time/dayLightSavingTime', () => {
     let time = 1421572235303;
     let date = new Date(time);
     let sixMonthsAgo = new Date(date.setMonth(date.getMonth() - 6));
-    expect(is.dayLightSavingTime(sixMonthsAgo)).toBe(true);
+    expect(is.dayLightSavingTime(sixMonthsAgo)).toBe(false);
+  });
+
+  test('is.not.dayLightSavingTime(january1) => true', () => {
+    let january1 = new Date('01/01/2015');
+    expect(is.not.dayLightSavingTime(january1)).toBe(true);
   });
 
 });

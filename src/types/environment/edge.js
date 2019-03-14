@@ -5,4 +5,7 @@ const isEdge = function (range) {
   return match !== null && this._compareVersion(match[1], range);
 }
 
+// edge method does not support 'all' and 'any' interfaces
+isEdge.api = ['not'];
+
 export default isEdge;

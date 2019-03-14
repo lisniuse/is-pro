@@ -8,7 +8,7 @@ is._vendor= '';
 describe('environment/desktop', () => {
 
   test('should return false', () => {
-    expect(is.desktop()).toBe(false);
+    expect(is.desktop()).toBe(true);
   });
 
 });

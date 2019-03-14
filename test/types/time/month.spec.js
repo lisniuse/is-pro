@@ -12,4 +12,9 @@ describe('time/month', () => {
     expect(is.month(new Date(time), 'february')).toBe(false);
   });
 
+  test('is.not.month(februaryObj, \'january\') => true', () => {
+    let februaryObj = new Date('02/26/2015');
+    expect(is.not.month(februaryObj, 'january')).toBe(true);
+  });
+
 });

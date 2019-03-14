@@ -43,7 +43,7 @@ export default {
   inLastYear: isInLastYear,
   inNextWeek: isInNextWeek,
   inNextMonth: isInNextMonth,
-  inInNextYear: isInNextYear,
+  inNextYear: isInNextYear,
   quarterOfYear: isQuarterOfYear,
   dayLightSavingTime: isDayLightSavingTime
 }

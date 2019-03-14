@@ -34,4 +34,21 @@ describe('array/sorted', () => {
     expect(is.sorted(array, '<')).toBe(false);
   });
 
+  test('is.not.sorted([5, 4, 3]) => true', () => {
+    expect(is.not.sorted([5, 4, 3])).toBe(true);
+  });
+
+  test('is.all.sorted([1, 2], [3, 4]) => true', () => {
+    expect(is.all.sorted([1, 2], [3, 4])).toBe(true);
+  });
+
+  test('is.any.sorted([1, 2], [5, 4]) => true', () => {
+    expect(is.any.sorted([1, 2], [5, 4])).toBe(true);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.sorted([[1, 2], [5, 4]]) => false', () => {
+    expect(is.all.sorted([[1, 2], [5, 4]])).toBe(false);
+  });
+  
 });

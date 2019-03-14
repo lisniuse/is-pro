@@ -11,4 +11,21 @@ describe('type/nan', () => {
     expect(is.nan(notNaN)).toBe(false);
   });
 
+  test('is.not.nan(42) => true', () => {
+    expect(is.not.nan(42)).toBe(true);
+  });
+
+  test('is.all.nan(NaN, 1) => false', () => {
+    expect(is.all.nan(NaN, 1)).toBe(false);
+  });
+  
+  test('is.any.nan(NaN, 2) => true', () => {
+    expect(is.any.nan(NaN, 2)).toBe(true);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.nan([NaN, \'foo\', 1]) => false', () => {
+    expect(is.all.nan([NaN, 'foo', 1])).toBe(false);
+  });
+
 });

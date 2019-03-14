@@ -14,4 +14,9 @@ describe('time/inNextYear', () => {
     expect(is.inNextYear(past)).toBe(false);
   });
 
+  test('is.not.inNextYear(thirteenMonthsLater) => true', () => {
+    let thirteenMonthsLater = new Date(new Date().setMonth(new Date().getMonth() + 13));
+    expect(is.not.inNextYear(thirteenMonthsLater)).toBe(true);
+  });
+
 });

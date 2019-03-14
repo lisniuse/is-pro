@@ -14,4 +14,9 @@ describe('time/inLastMonth', () => {
     expect(is.inLastMonth(fiftyDaysAgo)).toBe(false);
   });
 
+  test('is.not.inLastMonth(fortyDaysAgo) => true', () => {
+    let fortyDaysAgo = new Date(new Date().setDate(new Date().getDate() - 40));
+    expect(is.not.inLastMonth(fortyDaysAgo)).toBe(true);
+  });
+
 });

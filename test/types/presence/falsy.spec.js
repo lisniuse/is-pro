@@ -14,4 +14,21 @@ describe('presence/falsy', () => {
     expect(is.falsy(false)).toBe(true);
   });
 
+  test('is.not.falsy(true) => true', () => {
+    expect(is.not.falsy(true)).toBe(true);
+  });
+
+  test('is.all.falsy(null, false) => true', () => {
+    expect(is.all.falsy(null, false)).toBe(true);
+  });
+  
+  test('is.any.falsy(undefined, true) => true', () => {
+    expect(is.any.falsy(undefined, true)).toBe(true);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.falsy([false, true, undefined]) => false', () => {
+    expect(is.all.falsy([false, true, undefined])).toBe(false);
+  });
+
 });

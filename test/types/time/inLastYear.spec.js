@@ -14,4 +14,9 @@ describe('time/inLastYear', () => {
     expect(is.inLastYear(future)).toBe(false);
   });
 
+  test('is.not.inLastYear(thirteenMonthsAgo) => true', () => {
+    let thirteenMonthsAgo = new Date(new Date().setMonth(new Date().getMonth() - 13));
+    expect(is.not.inLastYear(thirteenMonthsAgo)).toBe(true);
+  });
+
 });

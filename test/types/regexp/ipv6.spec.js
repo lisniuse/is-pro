@@ -18,4 +18,21 @@ describe('regexp/ipv6', () => {
     expect(is.ipv6(undefined)).toBe(false);
   });
 
+  test('is.not.ipv6(\'8:::::::7\') => true', () => {
+    expect(is.not.ipv6('8:::::::7')).toBe(true);
+  });
+
+  test('is.all.ipv6(\'2001:DB8:0:0:1::1\', \'1:50:198:2::1:2:8\') => true', () => {
+    expect(is.all.ipv6('2001:DB8:0:0:1::1', '1:50:198:2::1:2:8')).toBe(true);
+  });
+  
+  test('is.any.ipv6(\'255.255.255.255\', \'2001:DB8:0:0:1::1\') => true', () => {
+    expect(is.any.ipv6('255.255.255.255', '2001:DB8:0:0:1::1')).toBe(true);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.ipv6([\'2001:DB8:0:0:1::1\', \'1.2.3\']) => false', () => {
+    expect(is.all.ipv6(['2001:DB8:0:0:1::1', '1.2.3'])).toBe(false);
+  });
+
 });

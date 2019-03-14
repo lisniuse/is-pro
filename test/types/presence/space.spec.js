@@ -10,4 +10,21 @@ describe('presence/space', () => {
     expect(is.space(' ')).toBe(true);
   });
 
+  test('is.not.space(true) => true', () => {
+    expect(is.not.space(true)).toBe(true);
+  });
+
+  test('is.all.space(\' \', \'foo\') => false', () => {
+    expect(is.all.space(' ', 'foo')).toBe(false);
+  });
+  
+  test('is.any.space(\' \', true) => false', () => {
+    expect(is.all.space(' ', 'foo')).toBe(false);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.space([\' \', \'foo\', undefined]) => false', () => {
+    expect(is.all.space([' ', 'foo', undefined])).toBe(false);
+  });
+
 });

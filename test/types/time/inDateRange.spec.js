@@ -18,4 +18,11 @@ describe('time/inDateRange', () => {
     expect(is.inDateRange(yesterday, today, tomorrow)).toBe(false);
   });
 
+  test('is.not.inDateRange(saturday, sunday, monday) => true', () => {
+    let saturday = new Date('01/24/2015');
+    let sunday = new Date('01/25/2015');
+    let monday = new Date('01/26/2015');
+    expect(is.not.inDateRange(saturday, sunday, monday)).toBe(true);
+  });
+
 });

@@ -14,4 +14,9 @@ describe('time/inNextWeek', () => {
     expect(is.inNextWeek(yesterday)).toBe(false);
   });
 
+  test('is.not.inNextMonth(fortyDaysLater) => true', () => {
+    let nineDaysLater = new Date(new Date().setDate(new Date().getDate() + 9));
+    expect(is.not.inNextWeek(nineDaysLater)).toBe(true);
+  });
+
 });

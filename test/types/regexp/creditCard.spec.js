@@ -18,4 +18,21 @@ describe('regexp/creditCard', () => {
     expect(is.creditCard(undefined)).toBe(false);
   });
 
+  test('is.not.creditCard(123) => true', () => {
+    expect(is.not.creditCard(123)).toBe(true);
+  });
+
+  test('is.all.creditCard(378282246310005, 123) => false', () => {
+    expect(is.all.creditCard(378282246310005, 123)).toBe(false);
+  });
+  
+  test('is.any.creditCard(378282246310005, 123) => true', () => {
+    expect(is.any.creditCard(378282246310005, 123)).toBe(true);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.creditCard([378282246310005, 123, undefined]) => false', () => {
+    expect(is.all.creditCard([378282246310005, 123, undefined])).toBe(false);
+  });
+  
 });

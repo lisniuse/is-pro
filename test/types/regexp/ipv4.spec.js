@@ -18,4 +18,21 @@ describe('regexp/ipv4', () => {
     expect(is.ipv4(undefined)).toBe(false);
   });
 
+  test('is.not.ipv4(\'8:::::::7\') => true', () => {
+    expect(is.not.ipv4('8:::::::7')).toBe(true);
+  });
+
+  test('is.all.ipv4(\'198.12.3.142\', \'123.123.123.123\') => true', () => {
+    expect(is.all.ipv4('198.12.3.142', '123.123.123.123')).toBe(true);
+  });
+  
+  test('is.any.ipv4(\'255.255.255.255\', \'850..1.4\') => true', () => {
+    expect(is.any.ipv4('255.255.255.255', '850..1.4')).toBe(true);
+  });
+
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.ipv4([\'198.12.3.142\', \'1.2.3\']) => false', () => {
+    expect(is.all.ipv4(['198.12.3.142', '1.2.3'])).toBe(false);
+  });
+
 });

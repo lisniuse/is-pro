@@ -5,4 +5,7 @@ const isFirefox = function (range) {
   return match !== null && this._compareVersion(match[1], range);
 };
 
+// firefox method does not support 'all' and 'any' interfaces
+isFirefox.api = ['not'];
+
 export default isFirefox;

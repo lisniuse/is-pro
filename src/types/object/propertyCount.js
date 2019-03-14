@@ -12,4 +12,7 @@ const isPropertyCount = function (object, count) {
   return n === count;
 };
 
+// propertyCount method does not support 'all' and 'any' interfaces
+isPropertyCount.api = ['not'];
+
 export default isPropertyCount;

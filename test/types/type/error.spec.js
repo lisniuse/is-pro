@@ -12,4 +12,20 @@ describe('type/error', () => {
     expect(is.error(notError)).toBe(false);
   });
 
+  test('is.not.error({foo: \'bar\'}) => true', () => {
+    expect(is.not.error({foo: 'bar'})).toBe(true);
+  });
+
+  test('is.all.error(new Error(), \'bar\') => false', () => {
+    expect(is.all.error(new Error(), 'bar')).toBe(false);
+  });
+  
+  test('is.any.error(new Error(), \'bar\') => true', () => {
+    expect(is.any.error(new Error(), 'bar')).toBe(true);
+  });
+
+  test('is.all.error([new Error(), \'foo\', \'bar\']) => false', () => {
+    expect(is.all.error([new Error(), 'foo', 'bar'])).toBe(false);
+  });
+
 });

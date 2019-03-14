@@ -10,4 +10,8 @@ describe('arithmetic/within', () => {
     expect(is.within(20, 5, 15)).toBe(false);
   });
 
+  test('is.not.within(40, 30, 35) => true', () => {
+    expect(is.not.within(40, 30, 35)).toBe(true);
+  });
+
 });

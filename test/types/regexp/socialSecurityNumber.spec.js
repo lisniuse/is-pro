@@ -19,4 +19,21 @@ describe('regexp/socialSecurityNumber', () => {
     expect(is.socialSecurityNumber(undefined)).toBe(false);
   });
 
+  test('is.not.socialSecurityNumber(\'123\') => true', () => {
+    expect(is.not.socialSecurityNumber('123')).toBe(true);
+  });
+
+  test('is.all.socialSecurityNumber(\'017-90-7890\', \'123\') => false', () => {
+    expect(is.all.socialSecurityNumber('017-90-7890', '123')).toBe(false);
+  });
+  
+  test('is.any.socialSecurityNumber(\'017-90-7890\', \'123\') => true', () => {
+    expect(is.any.socialSecurityNumber('017-90-7890', '123')).toBe(true);
+  });
+
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.socialSecurityNumber([\'017-90-7890\', \'123\']) => false', () => {
+    expect(is.all.socialSecurityNumber(['017-90-7890', '123'])).toBe(false);
+  });
+
 });

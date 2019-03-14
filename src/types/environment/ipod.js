@@ -5,4 +5,7 @@ const isIpod = function (range) {
   return match !== null && this._compareVersion(match[1], range);
 };
 
+// ipod method does not support 'all' and 'any' interfaces
+isIpod.api = ['not'];
+
 export default isIpod;

@@ -5,15 +5,10 @@ is._platform = '';
 is._userAgent = '';
 is._vendor= '';
 
-describe('environment/android', () => {
+describe('environment/opera', () => {
 
   test('should return false', () => {
-    expect(is.android()).toBe(false);
-  });
-
-  test('is.not.android() => true', () => {
-    expect(is.not.android()).toBe(true);
+    expect(is.operaMini()).toBe(false);
   });
 
 });
-

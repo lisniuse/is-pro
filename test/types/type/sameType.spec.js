@@ -11,4 +11,8 @@ describe('type/sameType', () => {
     expect(is.sameType(1, 'test')).toBe(false);
   });
 
+  test('is.not.sameType(42, 7) => false', () => {
+    expect(is.not.sameType(42, 7)).toBe(false);
+  });
+
 });

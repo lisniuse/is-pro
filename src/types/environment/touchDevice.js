@@ -4,4 +4,7 @@ const isTouchDevice = function () {
     ('DocumentTouch' in this._freeSelf && this._document instanceof DocumentTouch));
 };
 
+// touchDevice method does not support 'all' and 'any' interfaces
+isTouchDevice.api = ['not'];
+
 export default isTouchDevice;

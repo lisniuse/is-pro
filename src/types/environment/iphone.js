@@ -7,4 +7,7 @@ const isIphone = function (range) {
   return match !== null && this._compareVersion(match[1] || 1, range);
 };
 
+// iphone method does not support 'all' and 'any' interfaces
+isIphone.api = ['not'];
+
 export default isIphone;

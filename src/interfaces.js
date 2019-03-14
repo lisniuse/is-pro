@@ -6,7 +6,10 @@ import comparator from './helper/comparator';
 import {
   toString,
   slice,
-  hasOwnProperty,
+  hasOwnProperty
+} from './core/properties';
+
+import {
   freeGlobal,
   freeSelf,
   root,
@@ -15,8 +18,10 @@ import {
   navigator,
   platform,
   userAgent,
-  vendor
-} from './core/properties';
+  vendor,
+  days,
+  months
+} from './core/constant';
 
 // define interfaces
 let interfaces = {
@@ -40,7 +45,9 @@ let coreProperties = {
   _navigator: navigator,
   _platform: platform,
   _userAgent: userAgent,
-  _vendor: vendor
+  _vendor: vendor,
+  _days: days,
+  _months: months
 }
 
 // helpers

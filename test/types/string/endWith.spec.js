@@ -15,4 +15,8 @@ describe('string/endWith', () => {
     expect(is.endWith('id', '_id')).toBe(false);
   });
 
+  test('is.not.endWith(\'nope not that\', \'not\') => true', () => {
+    expect(is.not.endWith('nope not that', 'not')).toBe(true);
+  });
+
 });

@@ -1,9 +1,9 @@
 // is a given date indicate today?
 
-const isToday = function (date) {
-  let now = new Date();
-  let todayString = now.toDateString();
-  return this.date(date) && date.toDateString() === todayString;
+const isDay = function (date, day) {
+  return this.date(date) && day.toLowerCase() === this._days[date.getDay()];
 };
 
-export default isToday;
+isDay.api = ['not'];
+
+export default isDay;

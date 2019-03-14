@@ -14,4 +14,8 @@ describe('array/inArray', () => {
     expect(is.inArray(value, array)).toBe(false);
   });
 
+  test('is.not.inArray(4, [1, 2, 3]) => true', () => {
+    expect(is.not.inArray(4, [1, 2, 3])).toBe(true);
+  });
+
 });

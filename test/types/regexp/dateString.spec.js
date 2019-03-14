@@ -20,4 +20,21 @@ describe('regexp/dateString', () => {
     expect(is.dateString(undefined)).toBe(false);
   });
 
+  test('is.not.dateString(\'90/11/2011\') => true', () => {
+    expect(is.not.dateString('90/11/2011')).toBe(true);
+  });
+
+  test('is.all.dateString(\'11/11/2011\', \'90/11/2011\') => false', () => {
+    expect(is.all.dateString('11/11/2011', '90/11/2011')).toBe(false);
+  });
+  
+  test('is.any.dateString(\'11/11/2011\', \'90/11/2011\') => true', () => {
+    expect(is.any.dateString('11/11/2011', '90/11/2011')).toBe(true);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.dateString([\'11/11/2011\', \'90/11/2011\']) => false', () => {
+    expect(is.all.dateString(['11/11/2011', '90/11/2011'])).toBe(false);
+  });
+
 });

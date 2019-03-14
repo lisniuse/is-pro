@@ -18,4 +18,21 @@ describe('regexp/usZipCode', () => {
     expect(is.usZipCode(undefined)).toBe(false);
   });
 
+  test('is.not.usZipCode(\'123\') => true', () => {
+    expect(is.not.usZipCode('123')).toBe(true);
+  });
+  
+  test('is.all.usZipCode(\'02201-1020\', \'123\') => false', () => {
+    expect(is.all.usZipCode('02201-1020', '123')).toBe(false);
+  });
+
+  test('is.any.usZipCode(\'02201-1020\', \'123\') => true', () => {
+    expect(is.any.usZipCode('02201-1020', '123')).toBe(true);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.usZipCode([\'02201-1020\', \'123\']) => false', () => {
+    expect(is.all.usZipCode(['02201-1020', '123'])).toBe(false);
+  });
+
 });

@@ -26,4 +26,8 @@ describe('arithmetic/equal', () => {
     expect(is.equal(false, true)).toBe(false);
   });
 
+  test('is.not.equal(\'yeap\', \'nope\') => true', () => {
+    expect(is.not.equal('yeap', 'nope')).toBe(true);
+  });
+
 });

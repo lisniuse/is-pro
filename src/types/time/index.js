@@ -11,7 +11,7 @@ import timeLeapYear from './leapYear';
 import timeWeekday from './weekday';
 import timeWeekend from './weekend';
 import timeInDateRange from './inDateRange';
-import timeInLastWeek from './inLastMonth';
+import timeInLastWeek from './inLastWeek';
 import timeInLastMonth from './inLastMonth';
 import timeInLastYear from './inLastYear';
 import timeInNextWeek from './inNextWeek';

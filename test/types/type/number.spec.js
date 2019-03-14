@@ -14,16 +14,25 @@ describe('type/number', () => {
     expect(is.number(NaN)).toBe(false);
   });
 
-  // test('should return false if passed parameter type is number', () => {
-  //   expect(is.not.number(1)).toBe(false);
-  // });
+  test('is.not.number(\'42\') => true', () => {
+    expect(is.not.number('42')).toBe(true);
+  });
 
-  // test('should return false if passed parameter is (\'foo\', 1)', () => {
-  //   expect(is.all.number('foo', 1)).toBe(false);
-  // });
+  test('is.all.number(\'foo\', 1) => true', () => {
+    expect(is.not.number('42')).toBe(true);
+  });
 
-  // test('should return true if passed parameter is ({}, 2)', () => {
-  //   expect(is.any.number(({}, 2))).toBe(true);
-  // });
+  test('is.all.number(\'foo\', 1) => false', () => {
+    expect(is.all.number('foo', 1)).toBe(false);
+  });
+  
+  test('is.any.number({}, 2) => true', () => {
+    expect(is.any.number({}, 2)).toBe(true);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.number([42, \'foo\', 1]) => false', () => {
+    expect(is.all.number([42, 'foo', 1])).toBe(false);
+  });
   
 });

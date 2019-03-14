@@ -15,4 +15,12 @@ describe('type/arguments', () => {
     expect(is.arguments(notArgs)).toBe(false);
   });
 
+  test('is.any.arguments([\'foo\'], arguments) => true', () => {
+    expect(is.any.arguments(['foo'], arguments)).toBe(true);
+  });
+
+  test('is.all.arguments([arguments, \'foo\', \'bar\']) => false', () => {
+    expect(is.all.arguments([arguments, 'foo', 'bar'])).toBe(false);
+  });
+
 });

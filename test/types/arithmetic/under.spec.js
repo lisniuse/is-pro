@@ -10,4 +10,8 @@ describe('arithmetic/under', () => {
     expect(is.under(12, 11)).toBe(false);
   });
 
+  test('is.not.under(42, 30) => true', () => {
+    expect(is.not.under(42, 30)).toBe(true);
+  });
+
 });

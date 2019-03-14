@@ -11,4 +11,21 @@ describe('type/undefined', () => {
     expect(is.undefined('test')).toBe(false);
   });
 
+  test('is.not.undefined(null) = true;', () => {
+    expect(is.not.undefined(null)).toBe(true);
+  });
+
+  test('is.all.undefined(undefined, 1) = false;', () => {
+    expect(is.all.undefined(undefined, 1)).toBe(false);
+  });
+  
+  test('is.any.undefined(undefined, 2) = true;', () => {
+    expect(is.any.undefined(undefined, 2)).toBe(true);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.undefined([{}, undefined]) = false;', () => {
+    expect(is.all.undefined([{}, undefined])).toBe(false);
+  });
+
 });

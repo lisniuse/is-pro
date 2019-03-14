@@ -22,4 +22,21 @@ describe('regexp/caPostalCode', () => {
     expect(is.caPostalCode(undefined)).toBe(false);
   });
 
+  test('is.not.caPostalCode(\'123\') => true', () => {
+    expect(is.not.caPostalCode('123')).toBe(true);
+  });
+
+  test('is.all.caPostalCode(\'L8V3Y1\', \'123\') => false', () => {
+    expect(is.all.caPostalCode('L8V3Y1', '123')).toBe(false);
+  });
+  
+  test('is.any.caPostalCode(\'L8V3Y1\', \'123\') => true', () => {
+    expect(is.any.caPostalCode('L8V3Y1', '123')).toBe(true);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.caPostalCode([\'L8V3Y1\', \'123\']) => false', () => {
+    expect(is.all.caPostalCode(['L8V3Y1', '123'])).toBe(false);
+  });
+
 });

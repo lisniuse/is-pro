@@ -18,4 +18,21 @@ describe('regexp/timeString', () => {
     expect(is.timeString(undefined)).toBe(false);
   });
 
+  test('is.not.timeString(\'90:90:90\') => true', () => {
+    expect(is.not.timeString('90:90:90')).toBe(true);
+  });
+  
+  test('is.all.timeString(\'13:45:30\', \'90:90:90\') => false', () => {
+    expect(is.all.timeString('13:45:30', '90:90:90')).toBe(false);
+  });
+
+  test('is.any.timeString(\'13:45:30\', \'90:90:90\') => true', () => {
+    expect(is.any.timeString('13:45:30', '90:90:90')).toBe(true);
+  });
+
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.timeString([\'13:45:30\', \'90:90:90\']) => false', () => {
+    expect(is.all.timeString(['13:45:30', '90:90:90'])).toBe(false);
+  });
+
 });

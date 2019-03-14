@@ -13,5 +13,10 @@ describe('time/inNextMonth', () => {
     let yesterday = new Date(date.setDate(date.getDate() - 1));
     expect(is.inNextMonth(yesterday)).toBe(false);
   });
+  
+  test('is.not.inNextMonth(fortyDaysLater) => true', () => {
+    let fortyDaysLater = new Date(new Date().setDate(new Date().getDate() + 40));
+    expect(is.not.inNextMonth(fortyDaysLater)).toBe(true);
+  });
 
 });

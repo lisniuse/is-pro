@@ -19,4 +19,8 @@ describe('object/propertyCount', () => {
     expect(is.propertyCount(obj, 3)).toBe(false);
   });
 
+  test('is.not.propertyCount({}, 2) => true', () => {
+    expect(is.not.propertyCount({}, 2)).toBe(true);
+  });
+
 });

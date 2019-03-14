@@ -18,4 +18,21 @@ describe('regexp/nanpPhone', () => {
     expect(is.nanpPhone(undefined)).toBe(false);
   });
 
+  test('is.not.nanpPhone(\'123\') => true', () => {
+    expect(is.not.nanpPhone('123')).toBe(true);
+  });
+
+  test('is.all.nanpPhone(\'609-555-0175\', \'123\') => false', () => {
+    expect(is.all.nanpPhone('609-555-0175', '123')).toBe(false);
+  });
+  
+  test('is.any.nanpPhone(\'609-555-0175\', \'123\') => true', () => {
+    expect(is.any.nanpPhone('609-555-0175', '123')).toBe(true);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.nanpPhone([\'609-555-0175\', \'123\']) => false', () => {
+    expect(is.all.nanpPhone(['609-555-0175', '123'])).toBe(false);
+  });
+
 });

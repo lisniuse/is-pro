@@ -1,4 +1,6 @@
 const is = require('../../../dist/umd/ispro.js');
+const yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
+const tomorrow = new Date(new Date().setDate(new Date().getDate() + 1));
 
 describe('time/past', () => {
 
@@ -13,4 +15,21 @@ describe('time/past', () => {
     expect(is.past(date)).toBe(false);
   });
 
+  test('is.not.past(tomorrow) => true', () => {
+    expect(is.not.past(tomorrow)).toBe(true);
+  });
+  
+  test('is.all.past(tomorrow, yesterday) => false', () => {
+    expect(is.all.past(tomorrow, yesterday)).toBe(false);
+  });
+
+  test('is.any.past(yesterday, tomorrow) => true', () => {
+    expect(is.any.past(yesterday, tomorrow)).toBe(true);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.past([yesterday, tomorrow]) => false', () => {
+    expect(is.all.past([yesterday, tomorrow])).toBe(false);
+  });
+  
 });

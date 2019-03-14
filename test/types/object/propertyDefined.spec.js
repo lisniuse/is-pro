@@ -19,4 +19,8 @@ describe('object/propertyDefined', () => {
     expect(is.propertyDefined(obj, 'good')).toBe(false);
   });
 
+  test('is.not.propertyDefined({}, \'nope\') => true', () => {
+    expect(is.not.propertyDefined({}, 'nope')).toBe(true);
+  });
+  
 });

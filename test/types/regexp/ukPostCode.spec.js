@@ -18,4 +18,21 @@ describe('regexp/ukPostCode', () => {
     expect(is.ukPostCode(undefined)).toBe(false);
   });
 
+  test('is.not.ukPostCode(\'123\') => true', () => {
+    expect(is.not.ukPostCode('123')).toBe(true);
+  });
+
+  test('is.all.ukPostCode(\'B184BJ\', \'123\') => false', () => {
+    expect(is.all.ukPostCode('B184BJ', '123')).toBe(false);
+  });
+  
+  test('is.any.ukPostCode(\'B184BJ\', \'123\') => true', () => {
+    expect(is.any.ukPostCode('B184BJ', '123')).toBe(true);
+  });
+  
+  // 'all' and 'any' interfaces can also take array parameter
+  test('is.all.ukPostCode([\'B184BJ\', \'123\']) => false', () => {
+    expect(is.all.ukPostCode(['B184BJ', '123'])).toBe(false);
+  });
+
 });

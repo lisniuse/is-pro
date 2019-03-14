@@ -10,4 +10,8 @@ describe('string/include', () => {
     expect(is.include('test.com', 'nope')).toBe(false);
   });
 
+  test('is.not.include(\'test\', \'text\') => true', () => {
+    expect(is.not.include('test', 'text')).toBe(true);
+  });
+
 });

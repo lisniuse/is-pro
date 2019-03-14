@@ -3,4 +3,6 @@ const isInclude = function (string, target) {
   return string.indexOf(target) > -1;
 }
 
+isInclude.api = ['not'];
+
 export default isInclude;

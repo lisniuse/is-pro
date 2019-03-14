@@ -5,4 +5,7 @@ const isChrome = function (range) {
   return match !== null && this.not.opera() && this._compareVersion(match[1], range);
 };
 
+// chrome method does not support 'all' and 'any' interfaces
+isChrome.api = ['not'];
+
 export default isChrome;

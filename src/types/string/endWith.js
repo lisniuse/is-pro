@@ -8,4 +8,6 @@ const isEndWith = function (string, target) {
   return position >= 0 && string.indexOf(target, position) === position;
 };
 
+isEndWith.api = ['not'];
+
 export default isEndWith;
