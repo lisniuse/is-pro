@@ -2,6 +2,10 @@
 
 This is a general-purpose check library inherited from [is.js](https://github.com/arasatasaygin/is.js)
 
+[![NPM version](https://badge.fury.io/js/ispro.svg)](http://badge.fury.io/js/ispro)
+
+[![npm](https://nodei.co/npm/ispro.png)](https://www.npmjs.com/package/ispro)
+
 ## Features
 
 - No dependencies
@@ -2536,16 +2540,6 @@ is.not.dayLightSavingTime(january1);
 
 Configuration methods
 =====================
-
-is.setNamespace()
------------------
-Change namespace of library to prevent name collisions.
-
-```javascript
-var customName = is.setNamespace();
-customName.odd(3);
-=> true
-```
 
 is.setRegexp(value:regexp, name:string)
 ----------------------------------------
