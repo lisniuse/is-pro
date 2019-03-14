@@ -10,6 +10,7 @@ import {
 } from './core/properties';
 
 import {
+  MAX_SAFE_INTEGER,
   freeGlobal,
   freeSelf,
   root,
@@ -32,6 +33,8 @@ let interfaces = {
 
 //common prototype methods
 let coreProperties = {
+  //other
+  MAX_SAFE_INTEGER: MAX_SAFE_INTEGER,
   //some methods to call later on
   _toString: toString,
   _slice: slice,
