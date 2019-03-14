@@ -2,7 +2,7 @@
 
 This is a general-purpose check library inherited from [is.js](https://github.com/arasatasaygin/is.js)
 
-#### This is a general-purpose check library.
+## Features
 
 - No dependencies
 - AMD, Node & browser ready
@@ -31,10 +31,10 @@ yarn install ispro
 
 ```javascript
 // Using Node.js `require()`
-const Reqman = require('reqman');
+const is = require('ispro');
 
 // Using ES6 imports
-import Reqman from 'reqman';
+import is from 'ispro';
 ```
 
 ## Build
@@ -49,28 +49,35 @@ npm run build
 npm test
 ```
 
-## Type overview
+## Types overview
 
-Type | Presence | RegExp | String | Arithmetic
----|---|---|---|---
-arguments | empty | url | include | equal
-array | existy | email | upperCase | even
-boolean | truthy | creditCard | lowerCase | odd
-date | falsy | alphaNumeric | startWith | positive
-error | space | timeString | endWith | negative
-function | - | dateString | capitalized | above
-nan |  -  | usZipCode | palindrome | under
-null |  -  | caPostalCode | - | within
-number |  -  | ukPostCode | - | decimal
-object |  -  | nanpPhone | - | integer
-json |  -  | eppPhone | - | finite
-regexp |  -  | socialSecurityNumber | - | infinite
-string |  -  | affirmative | - | -
-char |  -  | hexadecimal | - | -
-undefined |  -  | hexColor | - | -
-sameType |  -  | ip | - | - 
-- |  -  | ipv4 | - | -
-- |  -  | ipv6 | - | -
+Type | Presence | RegExp | String | Arithmetic | Object | Array | Environment | Time | Configuration
+---|---|---|---|---|---|---|---|---|---
+arguments | empty | url | include | equal | propertyCount | inArray | ie | today | setRegexp
+array | existy | email | upperCase | even | propertyDefined | sorted | edge | yesterday | -
+boolean | truthy | creditCard | lowerCase | odd | windowObject | - | chrome | tomorrow | -
+date | falsy | alphaNumeric | startWith | positive | domNode | - | firefox | past | -
+error | space | timeString | endWith | negative | - | - | opera | future | -
+function | - | dateString | capitalized | above | - | - | safari | day | -
+nan |  -  | usZipCode | palindrome | under | - | - | ios | month | -
+null |  -  | caPostalCode | - | within | - | - | iphone | year | -
+number |  -  | ukPostCode | - | decimal | - | - | ipad | leapYear | -
+object |  -  | nanpPhone | - | integer | - | - | ipod | weekday | -
+json |  -  | eppPhone | - | finite | - | - | android | weekend | -
+regexp |  -  | socialSecurityNumber | - | infinite | - | - | androidPhone | inDateRange | -
+string |  -  | affirmative | - | - | - | - | androidTablet | inLastWeek | -
+char |  -  | hexadecimal | - | - | - | - | blackberry | inLastMonth | -
+undefined |  -  | hexColor | - | - | - | - | windowsPhone | inLastYear| -
+sameType |  -  | ip | - | -  | - | - | windowsTablet | inNextWeek | -
+\- |  -  | ipv4 | - | - | - | - | windows | inNextMonth | -
+\- |  -  | ipv6 | - | - | - | - | mac | inNextYear | -
+\- |  -  | - | - | - | - | - | linux | quarterOfYear | -
+\- |  -  | - | - | - | - | - | desktop | dayLightSavingTime | -
+\- |  -  | - | - | - | - | - | mobile | - | -
+\- |  -  | - | - | - | - | - | tablet | - | -
+\- |  -  | - | - | - | - | - | online | - | -
+\- |  -  | - | - | - | - | - | offline | - | -
+\- |  -  | - | - | - | - | - | touchDevice | - | -
 
 Type checks
 ===========
