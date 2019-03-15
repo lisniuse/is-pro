@@ -28,6 +28,9 @@ import timeSet from './time/timeSet';
 //configuration set
 import configurationSet from './configuration/configurationSet';
 
+//actual set
+import actualSet from './actual/actualSet';
+
 let types = Object.assign(
   typeSet,
   presenceSet,
@@ -38,7 +41,8 @@ let types = Object.assign(
   arraySet,
   environmentSet,
   timeSet,
-  configurationSet
+  configurationSet,
+  actualSet
 );
 
 export default types;

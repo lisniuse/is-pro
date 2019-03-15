@@ -1,5 +1,6 @@
 //import object
 import {
+  isEqual,
   isPropertyCount,
   isPropertyDefined,
   isWindowObject,
@@ -8,12 +9,12 @@ import {
   isArrayLike,
   isArrayBuffer,
   isArrayLikeObject,
-  isObjectLike,
-  isBuffer
+  isObjectLike
 } from './index';
 
 // export object
 export default {
+  equal: isEqual,
   propertyCount: isPropertyCount,
   propertyDefined: isPropertyDefined,
   windowObject: isWindowObject,
@@ -22,6 +23,5 @@ export default {
   arrayLike: isArrayLike,
   arrayBuffer: isArrayBuffer,
   arrayLikeObject: isArrayLikeObject,
-  objectLike: isObjectLike,
-  buffer: isBuffer
+  objectLike: isObjectLike
 }

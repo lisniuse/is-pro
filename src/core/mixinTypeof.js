@@ -1,16 +1,40 @@
 import { hasOwnProperty } from './properties';
-const ignoreOptions = ['typeof', 'sameType'];
+const whiteList = [
+  'arguments',
+  'array',
+  'buffer',
+  'boolean',
+  'date',
+  'error',
+  'function',
+  'nan',
+  'null',
+  'number',
+  'object',
+  'json',
+  'regexp',
+  'string',
+  'char',
+  'undefined',
+  'arrayLike',
+  'objectLike',
+  'empty',
+  'existy'
+];
 
-// API
-// Set 'not', 'all' and 'any' interfaces to methods based on their api property
-/* -------------------------------------------------------------------------- */
+/*
+ * Set 'typeof' API.
+ * > is.typeof([1,2,3]) 
+ * => [ 'array', 'object', 'existy', 'arrayLike', 'objectLike' ]
+ */
+
 const mixinTypeof = function (is) {
   let options = is;
-  const typeOf = function(value) {
+  const typeOf = function (value) {
     let typeNames = [];
     for (let option in options) {
       if (hasOwnProperty.call(options, option) && is['function'](options[option])) {
-        if ( ignoreOptions.indexOf(option) === -1 ) {
+        if (whiteList.indexOf(option) !== -1) {
           if (is[option](value) === true) {
             typeNames.push(option);
           }

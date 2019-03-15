@@ -2,6 +2,7 @@
 import {
   isArguments,
   isArray,
+  isBuffer,
   isBoolean,
   isDate,
   isError,
@@ -10,11 +11,15 @@ import {
   isNull,
   isNumber,
   isObject,
+  isPlainObject,
   isJson,
   isRegexp,
   isString,
   isChar,
   isUndefined,
+  isMap,
+  isSet,
+  isSymbol,
   isSameType
 } from './index';
 
@@ -22,6 +27,7 @@ import {
 export default {
   arguments: isArguments,
   array: isArray,
+  buffer: isBuffer,
   boolean: isBoolean,
   date: isDate,
   error: isError,
@@ -30,10 +36,14 @@ export default {
   null: isNull,
   number: isNumber,
   object: isObject,
+  plainObject: isPlainObject,
   json: isJson,
   regexp: isRegexp,
   string: isString,
   char: isChar,
   undefined: isUndefined,
+  map: isMap,
+  set: isSet,
+  symbol: isSymbol,
   sameType: isSameType
 }

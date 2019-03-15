@@ -1,6 +1,5 @@
 //import arithmetic
 import {
-  isEqual,
   isEven,
   isOdd,
   isPositive,
@@ -11,12 +10,12 @@ import {
   isDecimal,
   isInteger,
   isFinite,
-  isInfinite
+  isInfinite,
+  isFloat
 } from './index';
 
 // export arithmetic
 export default {
-  equal: isEqual,
   even: isEven,
   odd: isOdd,
   positive: isPositive,
@@ -27,5 +26,6 @@ export default {
   decimal: isDecimal,
   integer: isInteger,
   finite: isFinite,
-  infinite: isInfinite
+  infinite: isInfinite,
+  float: isFloat
 }

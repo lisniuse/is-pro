@@ -1,4 +1,3 @@
-import arithmeticEqual from './equal';
 import arithmeticEven from './even';
 import arithmeticOdd from './odd';
 import arithmeticPositive from './positive';
@@ -10,8 +9,8 @@ import arithmeticDecimal from './decimal';
 import arithmeticInteger from './integer';
 import arithmeticFinite from './finite';
 import arithmeticInfinite from './infinite';
+import arithmeticFloat from './float';
 
-export const isEqual = arithmeticEqual;
 export const isEven = arithmeticEven;
 export const isOdd = arithmeticOdd;
 export const isPositive = arithmeticPositive;
@@ -23,3 +22,4 @@ export const isDecimal = arithmeticDecimal;
 export const isInteger = arithmeticInteger;
 export const isFinite = arithmeticFinite;
 export const isInfinite = arithmeticInfinite;
+export const isFloat = arithmeticFloat;

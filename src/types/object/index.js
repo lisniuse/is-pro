@@ -1,3 +1,4 @@
+import objectEqual from './equal';
 import objectPropertyCount from './propertyCount';
 import objectPropertyDefined from './propertyDefined';
 import objectWindowObject from './windowObject';
@@ -7,8 +8,8 @@ import objectArrayLike from './arrayLike';
 import objectArrayBuffer from './arrayBuffer';
 import objectArrayLikeObject from './arrayLikeObject';
 import objectObjectLike from './objectLike';
-import objectBuffer from './buffer';
 
+export const isEqual = objectEqual;
 export const isPropertyCount = objectPropertyCount;
 export const isPropertyDefined = objectPropertyDefined;
 export const isWindowObject = objectWindowObject;
@@ -18,4 +19,3 @@ export const isArrayLike = objectArrayLike;
 export const isArrayBuffer = objectArrayBuffer;
 export const isArrayLikeObject = objectArrayLikeObject
 export const isObjectLike = objectObjectLike;
-export const isBuffer = objectBuffer;

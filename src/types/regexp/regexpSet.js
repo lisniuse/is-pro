@@ -3,6 +3,7 @@ import {
   isUrl,
   isEmail,
   isCreditCard,
+  isAscii,
   isAlphaNumeric,
   isTimeString,
   isDateString,
@@ -17,7 +18,13 @@ import {
   isHexColor,
   isIpv4,
   isIpv6,
-  isIp
+  isIp,
+  isDataURI,
+  isMagnetURL,
+  isMd5,
+  isMacAddress,
+  isBase64,
+  isUUID
 } from './index';
 
 // export regexp
@@ -25,6 +32,7 @@ export default {
   url: isUrl,
   email: isEmail,
   creditCard: isCreditCard,
+  ascii: isAscii,
   alphaNumeric: isAlphaNumeric,
   timeString: isTimeString,
   dateString: isDateString,
@@ -39,5 +47,11 @@ export default {
   hexColor: isHexColor,
   ipv4: isIpv4,
   ipv6: isIpv6,
-  ip: isIp
+  ip: isIp,
+  dataURI: isDataURI,
+  magnetURL: isMagnetURL,
+  md5: isMd5,
+  macAddress: isMacAddress,
+  base64: isBase64,
+  uuid: isUUID
 }

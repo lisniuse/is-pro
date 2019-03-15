@@ -11,8 +11,8 @@ describe('type/json', () => {
     expect(is.json(notObject)).toBe(false);
   });
 
-  test('is.not.json([]) => true', () => {
-    expect(is.not.json([])).toBe(true);
+  test('is.not.json([]) => false', () => {
+    expect(is.not.json([])).toBe(false);
   });
   
   test('is.all.json({}, 1) => false', () => {

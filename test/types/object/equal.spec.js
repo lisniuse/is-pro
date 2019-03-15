@@ -18,6 +18,58 @@ describe('arithmetic/equal', () => {
     expect(is.equal('test', 'test2')).toBe(false);
   });
 
+  test('should return true if given two complex types', () => {
+    let value1 = [
+      1,
+      '2',
+      function() {
+        return false
+      },
+      {
+        a: 1,
+        b: 2
+      }
+    ];
+    let value2 = [
+      1,
+      '2',
+      function() {
+        return false
+      },
+      {
+        a: 1,
+        b: 2
+      }
+    ]
+    expect(is.equal(value1, value2)).toBe(true);
+  });
+
+  test('should return false if given two complex types', () => {
+    let value1 = [
+      1,
+      '2',
+      function() {
+        return false
+      },
+      {
+        a: 1,
+        b: 2
+      }
+    ];
+    let value2 = [
+      1,
+      '2',
+      function() {
+        return true
+      },
+      {
+        a: 1,
+        b: 2
+      }
+    ]
+    expect(is.equal(value1, value2)).toBe(false);
+  });
+
   test('should return true if given two boolean are same', () => {
     expect(is.equal(false, false)).toBe(true);
   });
