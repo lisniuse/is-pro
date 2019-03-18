@@ -1131,7 +1131,7 @@ is.all.ipv4(['198.12.3.142', '1.2.3']);
 
 ```
 
-is.ipv6(value:any)
+is.ipv6(value: any)
 -------------------------
 #### Checks if the given value matches ipv6 regexp
 interfaces: not, all, any
@@ -1157,7 +1157,7 @@ is.all.ipv6(['2001:DB8:0:0:1::1', '1.2.3']);
 => false
 ```
 
-is.base64(value:any)
+is.base64(value: any)
 -------------------------
 #### Checks if the given value matches base64 regexp
 interfaces: not, all, any
@@ -1171,7 +1171,7 @@ is.ipv6('123456');
 
 ```
 
-is.ascii(value:any)
+is.ascii(value: any)
 -------------------------
 #### Checks if the given value matches ascii regexp
 interfaces: not, all, any
@@ -1185,7 +1185,7 @@ is.ascii('１２３456');
 
 ```
 
-is.macAddress(value:any)
+is.macAddress(value: any)
 -------------------------
 #### Checks if the given value matches macAddress regexp
 interfaces: not, all, any
@@ -1199,7 +1199,7 @@ is.macAddress('１２３456');
 
 ```
 
-is.magnetURL(value:any)
+is.magnetURL(value: any)
 -------------------------
 #### Checks if the given value matches magnetURL regexp
 interfaces: not, all, any
@@ -1213,7 +1213,7 @@ is.magnetURL('123456');
 
 ```
 
-is.md5(value:any)
+is.md5(value: any)
 -------------------------
 #### Checks if the given value matches md5 regexp
 interfaces: not, all, any
@@ -1230,7 +1230,7 @@ is.md5('123456');
 
 ```
 
-is.uuid(value:any)
+is.uuid(value: any)
 -------------------------
 #### Checks if the given value matches uuid regexp
 interfaces: not, all, any
@@ -1244,7 +1244,7 @@ is.uuid('123456');
 
 ```
 
-is.dataURI(value:any)
+is.dataURI(value: any)
 -------------------------
 #### Checks if the given value matches dataURI regexp
 interfaces: not, all, any
@@ -1302,7 +1302,6 @@ is.any.upperCase('YEAP', 'nope');
 is.all.upperCase(['YEAP', 'ALL UPPERCASE']);
 => true
 ```
-
 
 is.lowerCase(value:string)
 --------------------------
@@ -1732,7 +1731,7 @@ is.all.windowObject([window, {nope: 'nope'}]);
 => false
 ```
 
-is.domNode(value:any)
+is.domNode(value: any)
 -----------------------------
 #### Checks if the given object is a dom node.
 interfaces: not, all, any
@@ -1759,7 +1758,7 @@ is.all.domNode([obj, {nope: 'nope'}]);
 => false
 ```
 
-is.arrayBuffer(value:any)
+is.arrayBuffer(value: any)
 -----------------------------
 #### Checks if the given object is arrayBuffer object.
 interfaces: not, all, any
@@ -1773,7 +1772,7 @@ is.arrayBuffer(true);
 
 ```
 
-is.arrayLike(value:any)
+is.arrayLike(value: any)
 -----------------------------
 #### Checks if the given object is arrayLike object.
 interfaces: not, all, any
@@ -1787,7 +1786,7 @@ is.arrayLike(true);
 
 ```
 
-is.objectLike(value:any)
+is.objectLike(value: any)
 -----------------------------
 #### Checks if the given object is objectLike object.
 interfaces: not, all, any
@@ -1802,7 +1801,7 @@ is.objectLike('1');
 
 ```
 
-is.length(value:any)
+is.length(value: any)
 -----------------------------
 #### Checks if the given object is length.
 interfaces: not, all, any
@@ -1816,7 +1815,7 @@ is.length(Number.MIN_VALUE);
 
 ```
 
-is.equal(value:any)
+is.equal(value: any)
 -----------------------------
 #### are given values equal? supports numbers, strings, regexes, booleans, array, object
 interfaces: not, all, any
@@ -2452,7 +2451,7 @@ is.all.past([yesterday, tomorrow]);
 => false
 ```
 
-is.future(value:date)
+is.future(value: date)
 -----------------------
 #### Checks if the given date object indicate future.
 interfaces: not, all, any
@@ -2803,7 +2802,7 @@ is.url('quack');
 Actual checks
 =============
 
-is.cnBankCard(value:date)
+is.cnBankCard(value: any)
 ---------------------------
 #### Checks if the given card number is cnBankCard.
 interface: not
@@ -2816,7 +2815,7 @@ is.cnBankCard('123456');
 => false
 ```
 
-is.cnCellNum(value:date)
+is.cnCellNum(value: any)
 ---------------------------
 #### Checks if the given cell number is cnCellNum.
 interface: not
@@ -2829,7 +2828,7 @@ is.cnCellNum('123456');
 => false
 ```
 
-is.cnIdCode(value:date)
+is.cnIdCode(value: any)
 ---------------------------
 #### Checks if the given id code is cnIdCode.
 interface: not
@@ -2842,7 +2841,7 @@ is.cnIdCode('123456');
 => false
 ```
 
-is.cnName(value:date)
+is.cnName(value: any)
 ---------------------------
 #### Checks if the given name is cnName.
 interface: not
@@ -2855,7 +2854,7 @@ is.cnName('123456');
 => false
 ```
 
-is.cnTelNum(value:date)
+is.cnTelNum(value: any)
 ---------------------------
 #### Checks if the given tel number is cnTelNum.
 interface: not
@@ -2868,7 +2867,7 @@ is.cnTelNum('123456');
 => false
 ```
 
-is.cnZipCode(value:date)
+is.cnZipCode(value: any)
 ---------------------------
 #### Checks if the given tel number is cnZipCode.
 interface: not
@@ -2881,7 +2880,7 @@ is.cnZipCode('1222');
 => false
 ```
 
-is.password(value:date)
+is.password(value: any)
 ---------------------------
 #### Checks if the given value is password.
 interface: not
@@ -2894,7 +2893,7 @@ is.password('1222');
 => false
 ```
 
-is.username(value:date)
+is.username(value: any)
 ---------------------------
 #### Checks if the given value is username.
 interface: not
@@ -2907,7 +2906,7 @@ is.username('1222');
 => false
 ```
 
-is.QQ(value:date)
+is.QQ(value: any)
 ---------------------------
 #### Checks if the given value is QQ.
 interface: not
