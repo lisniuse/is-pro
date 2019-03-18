@@ -10,16 +10,21 @@ const whiteList = [
   'nan',
   'null',
   'number',
+  'plainObject',
   'object',
   'json',
-  'regexp',
+  'regexp', 
   'string',
   'char',
   'undefined',
   'arrayLike',
   'objectLike',
   'empty',
-  'existy'
+  'existy',
+  'set',
+  'map',
+  'symbol',
+  'buffer'
 ];
 
 /*

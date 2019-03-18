@@ -53,35 +53,44 @@ npm run build
 npm test
 ```
 
-## Types overview
+## Types overview 
 
-Type | Presence | RegExp | String | Arithmetic | Object | Array | Environment | Time | Configuration
----|---|---|---|---|---|---|---|---|---
-arguments | empty | url | include | equal | propertyCount | inArray | ie | today | setRegexp
-array | existy | email | upperCase | even | propertyDefined | sorted | edge | yesterday | -
-boolean | truthy | creditCard | lowerCase | odd | windowObject | - | chrome | tomorrow | -
-date | falsy | alphaNumeric | startWith | positive | domNode | - | firefox | past | -
-error | space | timeString | endWith | negative | - | - | opera | future | -
-function | - | dateString | capitalized | above | - | - | safari | day | -
-nan |  -  | usZipCode | palindrome | under | - | - | ios | month | -
-null |  -  | caPostalCode | - | within | - | - | iphone | year | -
-number |  -  | ukPostCode | - | decimal | - | - | ipad | leapYear | -
-object |  -  | nanpPhone | - | integer | - | - | ipod | weekday | -
-json |  -  | eppPhone | - | finite | - | - | android | weekend | -
-regexp |  -  | socialSecurityNumber | - | infinite | - | - | androidPhone | inDateRange | -
-string |  -  | affirmative | - | - | - | - | androidTablet | inLastWeek | -
-char |  -  | hexadecimal | - | - | - | - | blackberry | inLastMonth | -
-undefined |  -  | hexColor | - | - | - | - | windowsPhone | inLastYear| -
-sameType |  -  | ip | - | -  | - | - | windowsTablet | inNextWeek | -
-\- |  -  | ipv4 | - | - | - | - | windows | inNextMonth | -
-\- |  -  | ipv6 | - | - | - | - | mac | inNextYear | -
-\- |  -  | - | - | - | - | - | linux | quarterOfYear | -
-\- |  -  | - | - | - | - | - | desktop | dayLightSavingTime | -
-\- |  -  | - | - | - | - | - | mobile | - | -
-\- |  -  | - | - | - | - | - | tablet | - | -
-\- |  -  | - | - | - | - | - | online | - | -
-\- |  -  | - | - | - | - | - | offline | - | -
-\- |  -  | - | - | - | - | - | touchDevice | - | -
+Type | Presence | RegExp | String | Arithmetic | Object | Array | Environment | Time | Configuration | Actual
+---|---|---|---|---|---|---|---|---|---|---
+arguments | empty | url | include | equal | propertyCount | inArray | ie | today | setRegexp | cnBankCard
+array | existy | email | upperCase | even | propertyDefined | sorted | edge | yesterday | - | cnCellNum
+boolean | truthy | creditCard | lowerCase | odd | windowObject | - | chrome | tomorrow | - | cnIdCode
+date | falsy | alphaNumeric | startWith | positive | domNode | - | firefox | past | - | cnName
+error | space | timeString | endWith | negative | arrayBuffer | - | opera | future | - | cnTelNum
+function | - | dateString | capitalized | above | arrayLike | - | safari | day | - | cnZipCode
+nan |  -  | usZipCode | palindrome | under | objectLike | - | ios | month | - | password
+null |  -  | caPostalCode | - | within | length | - | iphone | year | - | username
+number |  -  | ukPostCode | - | decimal | equal | - | ipad | leapYear | - | QQ
+object |  -  | nanpPhone | - | integer | - | - | ipod | weekday | - | - 
+json |  -  | eppPhone | - | finite | - | - | android | weekend | - | - 
+regexp |  -  | socialSecurityNumber | - | infinite | - | - | androidPhone | inDateRange | - | - 
+string |  -  | affirmative | - | float | - | - | androidTablet | inLastWeek | - | - 
+char |  -  | hexadecimal | - | - | - | - | blackberry | inLastMonth | - | - 
+undefined |  -  | hexColor | - | - | - | - | windowsPhone | inLastYear| - | - 
+sameType |  -  | ip | - | -  | - | - | windowsTablet | inNextWeek | - | - 
+buffer |  -  | ipv4 | - | - | - | - | windows | inNextMonth | - | - 
+map |  -  | ipv6 | - | - | - | - | mac | inNextYear | - | - 
+plainObject |  -  | base64 | - | - | - | - | linux | quarterOfYear | - | - 
+set |  -  | ascii | - | - | - | - | desktop | dayLightSavingTime | - | - 
+symbol |  -  | macAddress | - | - | - | - | mobile | - | - | - 
+\- |  -  | magnetURL | - | - | - | - | tablet | - | - | - 
+\- |  -  | md5 | - | - | - | - | online | - | - | - 
+\- |  -  | uuid | - | - | - | - | offline | - | - | - 
+\- |  -  | dataURI | - | - | - | - | touchDevice | - | - | - 
+
+## Api description
+
+method | description
+---|---
+is.typeof(value: any) | Outputs the type of a value, and the type returned is an array.
+is.not[method](value: any) | Determine whether it is contrary to the given value.
+is.all[method](value: any) | Determine whether the given value fully satisfies the condition.
+is.any[method](value: any) | Determine whether a given value partially satisfies the condition.
 
 Type checks
 ===========
@@ -180,33 +189,6 @@ is.any.date(new Date(), 'bar');
 
 // 'all' and 'any' interfaces can also take array parameter
 is.all.date([new Date(), 'foo', 'bar']);
-=> false
-```
-
-is.domNode(value:any)
------------------------------
-#### Checks if the given object is a dom node.
-interfaces: not, all, any
-
-```javascript
-var obj = document.createElement('div');
-is.domNode(obj);
-=> true
-
-is.domNode({nope: 'nope'});
-=> false
-
-is.not.domNode({});
-=> true
-
-is.all.domNode(obj, obj);
-=> true
-
-is.any.domNode(obj, {nope: 'nope'});
-=> true
-
-// 'all' and 'any' interfaces can also take array parameter
-is.all.domNode([obj, {nope: 'nope'}]);
 => false
 ```
 
@@ -490,29 +472,68 @@ is.not.sameType(42, 7);
 => false
 ```
 
-is.windowObject(value:any)
------------------------------
-#### Checks if the given object is window object.
-interfaces: not, all, any
+is.buffer(value:any)
+---------------------------------
+#### Checks if `value` is a buffer.
+interface: not
 
 ```javascript
-is.windowObject(window);
+is.buffer(new Buffer(2));
 => true
 
-is.windowObject({nope: 'nope'});
+is.buffer(true);
 => false
+```
 
-is.not.windowObject({});
+is.map(value:any)
+---------------------------------
+#### Checks if `value` is classified as a `Map` object.
+interface: not
+
+```javascript
+is.map(new Map());
 => true
 
-is.all.windowObject(window, {nope: 'nope'});
+is.map('123456');
 => false
+```
 
-is.any.windowObject(window, {nope: 'nope'});
+is.plainObject(value:any)
+---------------------------------
+#### Checks if value is a plain object, that is, 
+interface: not
+
+```javascript
+is.plainObject({});
 => true
 
-// 'all' and 'any' interfaces can also take array parameter
-is.all.windowObject([window, {nope: 'nope'}]);
+is.plainObject('123456');
+=> false
+```
+
+is.set(value:any)
+---------------------------------
+#### Checks if `value` is classified as a `Set` object.
+interface: not
+
+```javascript
+is.set(new Set());
+=> true
+
+is.set('123456');
+=> false
+```
+
+is.symbol(value:any)
+---------------------------------
+#### Checks if `value` is classified as a `Symbol` object.
+interface: not
+
+```javascript
+is.symbol(Symbol());
+=> true
+
+is.symbol('123456');
 => false
 ```
 
@@ -1136,6 +1157,107 @@ is.all.ipv6(['2001:DB8:0:0:1::1', '1.2.3']);
 => false
 ```
 
+is.base64(value:any)
+-------------------------
+#### Checks if the given value matches base64 regexp
+interfaces: not, all, any
+
+```javascript
+is.base64('dGhpcyBpcyBhIGV4YW1wbGU=');
+=> true 
+
+is.ipv6('123456');
+=> false
+
+```
+
+is.ascii(value:any)
+-------------------------
+#### Checks if the given value matches ascii regexp
+interfaces: not, all, any
+
+```javascript
+is.ascii('foobar');
+=> true 
+
+is.ascii('１２３456');
+=> false
+
+```
+
+is.macAddress(value:any)
+-------------------------
+#### Checks if the given value matches macAddress regexp
+interfaces: not, all, any
+
+```javascript
+is.macAddress('FF:FF:FF:FF:FF:FF');
+=> true 
+
+is.macAddress('１２３456');
+=> false
+
+```
+
+is.magnetURL(value:any)
+-------------------------
+#### Checks if the given value matches magnetURL regexp
+interfaces: not, all, any
+
+```javascript
+is.magnetURL('magnet:?xt=urn:btih:3E30322D5BFC7444B7B1D8DD42404B75D0531DFB&dn=world&tr=udp://world.com:133'');
+=> true 
+
+is.magnetURL('123456');
+=> false
+
+```
+
+is.md5(value:any)
+-------------------------
+#### Checks if the given value matches md5 regexp
+interfaces: not, all, any
+
+```javascript
+is.md5('49ba59abbe56e057');
+=> true
+
+is.md5('e10adc3949ba59abbe56e057f20f883e');
+=> true 
+
+is.md5('123456');
+=> false
+
+```
+
+is.uuid(value:any)
+-------------------------
+#### Checks if the given value matches uuid regexp
+interfaces: not, all, any
+
+```javascript
+is.uuid('A987FBC9-4BED-3078-CF07-9141BA07C9F3');
+=> true
+
+is.uuid('123456');
+=> false
+
+```
+
+is.dataURI(value:any)
+-------------------------
+#### Checks if the given value matches dataURI regexp
+interfaces: not, all, any
+
+```javascript
+is.dataURI('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAAD///+l2Z/dAAAAM0lEQVR4nGP4/5/h/1+G/58ZDrAz3D/McH8yw83NDDeNGe4Ug9C9zwz3gVLMDA/A6P9/AFGGFyjOXZtQAAAAAElFTkSuQmCC');
+=> true
+
+is.dataURI('123456');
+=> false
+
+```
+
 String checks
 =============
 
@@ -1582,6 +1704,130 @@ is.propertyDefined({yeap: 'yeap'}, 'nope');
 
 is.not.propertyDefined({}, 'nope');
 => true
+```
+
+is.windowObject(value:any)
+-----------------------------
+#### Checks if the given object is window object.
+interfaces: not, all, any
+
+```javascript
+is.windowObject(window);
+=> true
+
+is.windowObject({nope: 'nope'});
+=> false
+
+is.not.windowObject({});
+=> true
+
+is.all.windowObject(window, {nope: 'nope'});
+=> false
+
+is.any.windowObject(window, {nope: 'nope'});
+=> true
+
+// 'all' and 'any' interfaces can also take array parameter
+is.all.windowObject([window, {nope: 'nope'}]);
+=> false
+```
+
+is.domNode(value:any)
+-----------------------------
+#### Checks if the given object is a dom node.
+interfaces: not, all, any
+
+```javascript
+var obj = document.createElement('div');
+is.domNode(obj);
+=> true
+
+is.domNode({nope: 'nope'});
+=> false
+
+is.not.domNode({});
+=> true
+
+is.all.domNode(obj, obj);
+=> true
+
+is.any.domNode(obj, {nope: 'nope'});
+=> true
+
+// 'all' and 'any' interfaces can also take array parameter
+is.all.domNode([obj, {nope: 'nope'}]);
+=> false
+```
+
+is.arrayBuffer(value:any)
+-----------------------------
+#### Checks if the given object is arrayBuffer object.
+interfaces: not, all, any
+
+```javascript
+is.arrayBuffer(new ArrayBuffer(2));
+=> true
+
+is.arrayBuffer(true);
+=> false
+
+```
+
+is.arrayLike(value:any)
+-----------------------------
+#### Checks if the given object is arrayLike object.
+interfaces: not, all, any
+
+```javascript
+is.arrayLike([1, 2, 3]);
+=> true
+
+is.arrayLike(true);
+=> false
+
+```
+
+is.objectLike(value:any)
+-----------------------------
+#### Checks if the given object is objectLike object.
+interfaces: not, all, any
+
+```javascript
+is.objectLike([1, 2, 3]);
+is.objectLike(new Date());
+=> true
+
+is.objectLike('1');
+=> false
+
+```
+
+is.length(value:any)
+-----------------------------
+#### Checks if the given object is length.
+interfaces: not, all, any
+
+```javascript
+is.length([1, 2, 3].length);
+=> true
+
+is.length(Number.MIN_VALUE);
+=> false
+
+```
+
+is.equal(value:any)
+-----------------------------
+#### are given values equal? supports numbers, strings, regexes, booleans, array, object
+interfaces: not, all, any
+
+```javascript
+is.equal({a: 1}, {a: 1});
+=> true
+
+is.equal([2], [3]);
+=> false
+
 ```
 
 Array checks
@@ -2552,4 +2798,124 @@ is.url('https://www.duckduckgo.com');
 is.setRegexp(/quack/, 'url');
 is.url('quack');
 => true
+```
+
+Actual checks
+=============
+
+is.cnBankCard(value:date)
+---------------------------
+#### Checks if the given card number is cnBankCard.
+interface: not
+
+```javascript
+is.cnBankCard('6214837838319709');
+=> true
+
+is.cnBankCard('123456');
+=> false
+```
+
+is.cnCellNum(value:date)
+---------------------------
+#### Checks if the given cell number is cnCellNum.
+interface: not
+
+```javascript
+is.cnCellNum('13984896107');
+=> true
+
+is.cnCellNum('123456');
+=> false
+```
+
+is.cnIdCode(value:date)
+---------------------------
+#### Checks if the given id code is cnIdCode.
+interface: not
+
+```javascript
+is.cnIdCode('130421197502013675');
+=> true
+
+is.cnIdCode('123456');
+=> false
+```
+
+is.cnName(value:date)
+---------------------------
+#### Checks if the given name is cnName.
+interface: not
+
+```javascript
+is.cnName('马云');
+=> true
+
+is.cnName('123456');
+=> false
+```
+
+is.cnTelNum(value:date)
+---------------------------
+#### Checks if the given tel number is cnTelNum.
+interface: not
+
+```javascript
+is.cnTelNum('010-1234567');
+=> true
+
+is.cnTelNum('123456');
+=> false
+```
+
+is.cnZipCode(value:date)
+---------------------------
+#### Checks if the given tel number is cnZipCode.
+interface: not
+
+```javascript
+is.cnZipCode('100000');
+=> true
+
+is.cnZipCode('1222');
+=> false
+```
+
+is.password(value:date)
+---------------------------
+#### Checks if the given value is password.
+interface: not
+
+```javascript
+is.password('abcd1234567890');
+=> true
+
+is.password('1222');
+=> false
+```
+
+is.username(value:date)
+---------------------------
+#### Checks if the given value is username.
+interface: not
+
+```javascript
+is.username('username123123');
+=> true
+
+is.username('1222');
+=> false
+```
+
+is.QQ(value:date)
+---------------------------
+#### Checks if the given value is QQ.
+interface: not
+
+```javascript
+is.QQ('12345678');
+=> true
+
+is.QQ('lol!');
+=> false
 ```

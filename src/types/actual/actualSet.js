@@ -6,7 +6,9 @@ import {
   isCnName,
   isCnTelNum,
   isCnZipCode,
-  isQQ
+  isQQ,
+  isUsername,
+  isPassword
 } from './index';
 
 // export actual
@@ -17,5 +19,7 @@ export default {
   cnName: isCnName,
   cnTelNum: isCnTelNum,
   cnZipCode: isCnZipCode,
-  QQ: isQQ
+  QQ: isQQ,
+  username: isUsername,
+  password: isPassword
 }

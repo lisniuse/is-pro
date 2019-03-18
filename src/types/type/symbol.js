@@ -1,4 +1,4 @@
-// Checks if `value` is classified as a `Set` object.
+// Checks if `value` is classified as a `Symbol` object.
 const isSymbol = function (value) {
   return this._toString.call(value) === '[object Symbol]' &&
     typeof value === 'symbol';
