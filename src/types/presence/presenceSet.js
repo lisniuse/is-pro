@@ -4,7 +4,8 @@ import {
   isExisty,
   isTruthy,
   isFalsy,
-  isSpace
+  isSpace,
+  isValid
 } from './index';
 
 // export presence
@@ -13,5 +14,6 @@ export default {
   existy: isExisty,
   truthy: isTruthy,
   falsy: isFalsy,
-  space: isSpace
+  space: isSpace,
+  valid: isValid
 }

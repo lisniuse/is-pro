@@ -62,7 +62,7 @@ array | existy | email | upperCase | even | propertyDefined | sorted | edge | ye
 boolean | truthy | creditCard | lowerCase | odd | windowObject | - | chrome | tomorrow | - | cnIdCode
 date | falsy | alphaNumeric | startWith | positive | domNode | - | firefox | past | - | cnName
 error | space | timeString | endWith | negative | arrayBuffer | - | opera | future | - | cnTelNum
-function | - | dateString | capitalized | above | arrayLike | - | safari | day | - | cnZipCode
+function | valid | dateString | capitalized | above | arrayLike | - | safari | day | - | cnZipCode
 nan |  -  | usZipCode | palindrome | under | objectLike | - | ios | month | - | password
 null |  -  | caPostalCode | - | within | length | - | iphone | year | - | username
 number |  -  | ukPostCode | - | decimal | equal | - | ipad | leapYear | - | QQ
@@ -88,9 +88,9 @@ symbol |  -  | macAddress | - | - | - | - | mobile | - | - | -
 method | description
 ---|---
 is.typeof(value: any) | Outputs the type of a value, and the type returned is an array.
-is.not[method](value: any) | Determine whether it is contrary to the given value.
-is.all[method](value: any) | Determine whether the given value fully satisfies the condition.
-is.any[method](value: any) | Determine whether a given value partially satisfies the condition.
+is.not\[method\](value: any) | Determine whether it is contrary to the given value.
+is.all\[method\](value: any) | Determine whether the given value fully satisfies the condition.
+is.any\[method\](value: any) | Determine whether a given value partially satisfies the condition.
 
 Type checks
 ===========
@@ -670,6 +670,32 @@ is.any.space(' ', true);
 
 // 'all' and 'any' interfaces can also take array parameter
 is.all.space([' ', 'foo', undefined]);
+=> false
+```
+
+is.valid(value: any)
+----------------------
+#### Checks if the given value is valid.
+interfaces: not, all, any
+
+```javascript
+is.valid(1);
+=> true
+
+is.valid(null);
+=> false
+
+is.not.valid(null);
+=> true
+
+is.all.valid(mull, 'foo');
+=> false
+
+is.any.valid(null, true);
+=> true
+
+// 'all' and 'any' interfaces can also take array parameter
+is.all.valid([' ', 'foo', undefined]);
 => false
 ```
 
