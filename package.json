@@ -1,6 +1,6 @@
 {
   "name": "ispro",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "This is a general-purpose check library.",
   "license": "MIT",
   "homepage": "https://github.com/lisniuse/is-pro",
@@ -14,13 +14,14 @@
   "authors": [
     "Zhibin Chen <17560235@qq.com> (https://github.com/lisniuse)"
   ],
-  "main": "dist/cjs/ispro.js",
-  "unpkg": "dist/umd/ispro.js",
-  "module": "dist/es/ispro.js",
+  "main": "./dist/cjs/ispro.js",
+  "unpkg": "./dist/umd/ispro.js",
+  "module": "./dist/es/ispro.js",
   "typings": "./index.d.ts",
   "files": [
     "dist",
     "src",
+    "index.js",
     "index.d.ts"
   ],
   "scripts": {
