@@ -7,7 +7,23 @@
   <title>Document</title>
 </head>
 <body>
-  
   <script src="../dist/umd/ispro.min.js"></script>
+  <script>    
+    (function(g) {
+      const is = g.ispro;
+      function test(expression, expectation) {
+        let result = eval(expression);
+        let expect = eval(expectation);
+        if ( result === expect ) {
+          console.log(expression + ' => ' + expectation + ' ✔︎');
+        } else {
+          throw new Error(expression + ' => ' + result + ' not ' + expectation);
+        }
+      };
+      test('is.number(1)', 'true');
+      test('is.string("1")', 'true');
+      test('is.string("1")', 'true');
+    })(window);
+  </script>
 </body>
 </html>
