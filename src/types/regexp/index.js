@@ -1,6 +1,7 @@
 import isExisty from '../presence/existy';
 import regexpDataURI from './dataURI';
 import regexpBase64 from './base64';
+import regexpUrl from './url';
 import regexpUUID from './uuid';
 
 const regexes = {
@@ -23,7 +24,6 @@ const regexes = {
   socialSecurityNumber: /^(?!000|666)[0-8][0-9]{2}-?(?!00)[0-9]{2}-?(?!0000)[0-9]{4}$/,
   timeString: /^(2[0-3]|[01]?[0-9]):([0-5]?[0-9]):([0-5]?[0-9])$/,
   ukPostCode: /^[A-Z]{1,2}[0-9RCHNQ][0-9A-Z]?\s?[0-9][ABD-HJLNP-UW-Z]{2}$|^[A-Z]{2}-?[0-9]{4}$/,
-  url: /^(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?$/i,
   usZipCode: /^[0-9]{5}(?:-[0-9]{4})?$/
 };
 
@@ -33,7 +33,6 @@ const regexpFn = function (regexp) {
   }
 }
 
-export const isUrl = regexpFn('url');
 export const isEmail = regexpFn('email');
 export const isCreditCard = regexpFn('creditCard');
 export const isAscii = regexpFn('ascii');
@@ -56,6 +55,7 @@ export const isIpv4 = regexpFn('ipv4');
 export const isIpv6 = regexpFn('ipv6');
 export const isDataURI = regexpDataURI;
 export const isBase64 = regexpBase64;
+export const isUrl = regexpUrl;
 export const isUUID = regexpUUID;
 // simplify IP checks by calling the regex helpers for IPv4 and IPv6
 export const isIp = function (value) {
