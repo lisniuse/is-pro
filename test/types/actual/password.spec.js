@@ -10,4 +10,8 @@ describe('actual/password', () => {
     expect(is.password('abcd')).toBe(false);
   });
 
+  test('should return false if given a wrong password', () => {
+    expect(is.password('')).toBe(false);
+  });
+
 });
