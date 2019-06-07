@@ -7,6 +7,11 @@ describe('type/boolean', () => {
     expect(is.boolean(bool)).toBe(true);
   });
 
+  test('should return true if passed parameter type is boolean', () => {
+    let bool = false;
+    expect(is.boolean(bool)).toBe(true);
+  });
+
   test('should return false if passed parameter type is not boolean', () => {
     let notBool = 'test';
     expect(is.boolean(notBool)).toBe(false);

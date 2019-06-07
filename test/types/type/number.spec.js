@@ -3,6 +3,10 @@ const is = require('../../../dist/umd/ispro.js');
 describe('type/number', () => {
 
   test('should return true if passed parameter type is number', () => {
+    expect(is.number(0)).toBe(true);
+  });
+
+  test('should return true if passed parameter type is number', () => {
     expect(is.number(1)).toBe(true);
   });
   
